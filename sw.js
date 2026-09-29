@@ -1,5 +1,5 @@
 // +− : робота без інтернету
-const V = 'plus-minus-v1';
+const V = 'plus-minus-v2';
 const CORE = ['./', 'index.html', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png',
   'icons/apple-touch-icon.png', 'icons/favicon-32.png'];

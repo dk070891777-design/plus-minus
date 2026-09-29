@@ -668,4 +668,12 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 </script>
 
+<button id="pmInstall" type="button" style="display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:9999;padding:14px 22px;border:0;border-radius:16px;background:#23262B;color:#fff;font:600 16px/1.2 Onest,system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer">⬇ Встановити на екран</button>
+<script>
+(function(){var ev=null,b=document.getElementById('pmInstall');
+var inApp=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;if(!inApp)b.style.display='block'});
+b.addEventListener('click',function(){if(!ev)return;ev.prompt();ev.userChoice.then(function(){ev=null;b.style.display='none'})});
+window.addEventListener('appinstalled',function(){b.style.display='none'});})();
+</script>
 </body></html>
